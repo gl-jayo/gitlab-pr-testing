@@ -21,8 +21,8 @@ docker-test:
         - printenv
         - echo "Hi, I'm sleeping ..."
         - sleep 10
-    only:
-        - external_pull_requests
+#     only:
+#         - external_pull_requests
 # kubernetes-test:
 #     tags:
 #         - instance-kubernetes-runner
