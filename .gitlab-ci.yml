@@ -4,13 +4,15 @@ variables:
     GIT_TRACE_PERFORMANCE: "1"
     GIT_CURL_VERBOSE: "1"
     CURL_TRACE: "1"
-shell-test:
-    tags:
-        - instance-shell-runner
-    script:
-        - printenv
-        - echo "Hi, I'm sleeping ..."
-        - sleep 10
+# shell-test:
+#     tags:
+#         - instance-shell-runner
+#     script:
+#         - printenv
+#         - echo "Hi, I'm sleeping ..."
+#         - sleep 10
+#     only:
+#         - external_pull_requests
 docker-test:
     tags:
         - instance-docker-runner
@@ -19,40 +21,42 @@ docker-test:
         - printenv
         - echo "Hi, I'm sleeping ..."
         - sleep 10
-kubernetes-test:
-    tags:
-        - instance-kubernetes-runner
-    image: ubuntu:latest
-    script:
-        - printenv
-        - echo "Hi, I'm sleeping ..."
-        - sleep 10
-shell-pr-test:
-    tags:
-        - instance-shell-runner
-    script:
-        - printenv
-        - echo "Hi, I'm sleeping on a pull request ..."
-        - sleep 10
-    only:
-      - external_pull_requests
-docker-pr-test:
-    tags:
-        - instance-docker-runner
-    image: ubuntu:latest
-    script:
-        - printenv
-        - echo "Hi, I'm sleeping on a pull request ..."
-        - sleep 10
-    only:
-      - external_pull_requests
-kubernetes-pr-test:
-    tags:
-        - instance-kubernetes-runner
-    image: ubuntu:latest
-    script:
-        - printenv
-        - echo "Hi, I'm sleeping on a pull request ..."
-        - sleep 10
-    only:
-      - external_pull_requests
+#     only:
+#         - external_pull_requests
+# kubernetes-test:
+#     tags:
+#         - instance-kubernetes-runner
+#     image: ubuntu:latest
+#     script:
+#         - printenv
+#         - echo "Hi, I'm sleeping ..."
+#         - sleep 10
+# shell-pr-test:
+#     tags:
+#         - instance-shell-runner
+#     script:
+#         - printenv
+#         - echo "Hi, I'm sleeping on a pull request ..."
+#         - sleep 10
+#     only:
+#       - external_pull_requests
+# docker-pr-test:
+#     tags:
+#         - instance-docker-runner
+#     image: ubuntu:latest
+#     script:
+#         - printenv
+#         - echo "Hi, I'm sleeping on a pull request ..."
+#         - sleep 10
+#     only:
+#       - external_pull_requests
+# kubernetes-pr-test:
+#     tags:
+#         - instance-kubernetes-runner
+#     image: ubuntu:latest
+#     script:
+#         - printenv
+#         - echo "Hi, I'm sleeping on a pull request ..."
+#         - sleep 10
+#     only:
+#       - external_pull_requests
